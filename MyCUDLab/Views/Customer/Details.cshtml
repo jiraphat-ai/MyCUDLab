@@ -1,0 +1,100 @@
+﻿@model MyCUDLab.Models.Customer
+
+@{
+    ViewBag.Title = "Customer Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    .panel {
+        background-color: #1e1e1e;
+        border-color: #333;
+    }
+
+    .panel-heading {
+        background-color: #2c2c2c;
+        border-color: #333;
+        color: #e0e0e0;
+    }
+
+    .list-group-item {
+        background-color: #1e1e1e;
+        border-color: #333;
+        color: #e0e0e0;
+    }
+
+    .btn-primary {
+        background-color: #6200ee;
+        border-color: #6200ee;
+    }
+
+        .btn-primary:hover {
+            background-color: #7c4dff;
+            border-color: #7c4dff;
+        }
+
+    .btn-default {
+        background-color: #2c2c2c;
+        border-color: #333;
+        color: #e0e0e0;
+    }
+
+        .btn-default:hover {
+            background-color: #3c3c3c;
+            border-color: #444;
+            color: #ffffff;
+        }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Customer Details</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="@Url.Content("~/Content/images/" + Model.Image)" alt="@Model.CustomerName" class="img-circle img-responsive center-block" style="max-width: 200px; margin-bottom: 20px;" />
+                        </div>
+                        <div class="col-md-8">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <strong>@Html.DisplayNameFor(model => model.CustomerName):</strong>
+                                    <span class="pull-right">@Html.DisplayFor(model => model.CustomerName)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>@Html.DisplayNameFor(model => model.Address):</strong>
+                                    <span class="pull-right">@Html.DisplayFor(model => model.Address)</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>@Html.DisplayNameFor(model => model.Country):</strong>
+                                    <span class="pull-right">@Html.DisplayFor(model => model.Country)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="btn-group" role="group">
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
